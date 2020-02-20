@@ -3,10 +3,9 @@
 let binToDec (origin:string) =
     if(Regex.IsMatch (origin, "^[10]*$")) then
         origin.ToCharArray()
-        |> List.ofArray
-        |> List.rev
-        |> List.indexed
-        |> List.fold (fun a b -> a + (int(snd b) - 48)  * pown 2 (fst b)) 0
+        |> Array.rev
+        |> Array.indexed
+        |> Array.fold (fun a b -> a + (int(snd b) - 48)  * pown 2 (fst b)) 0
         |> Some
     else
         None
